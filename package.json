@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
-    "start": "webpack-dev-server --host 127.0.0.1 --port 3000"
+    "start": "webpack-dev-server --host 127.0.0.1 --port 3000",
+    "lint": "eslint \"src/**\" --ext .js --ext .jsx --cache"
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,20 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
     "css-loader": "^0.23.1",
+    "eslint": "^2.12.0",
+    "eslint-config-marlint": "^2.1.0",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-react": "^5.1.1",
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
+    "pre-push": "^0.1.1",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
@@ -39,5 +46,9 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "redux": "^3.5.2"
-  }
+  },
+  "pre-push": [
+    "lint",
+    "test"
+  ]
 }
