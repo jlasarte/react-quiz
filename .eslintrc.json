@@ -1,0 +1,9 @@
+{
+    	"extends": ["marlint"],
+      "env": {
+        "browser": true
+      },
+      "rules": {
+        "no-console": 1
+      }
+}
