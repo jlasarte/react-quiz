@@ -132,71 +132,59 @@ describe('application logic', () => {
   describe('play', () => {
 
     it('user select correct answer', () => {
-      const state = Map({
-        entries: List(),
-        game: Map({
-          user: 'Test User',
-          tally: 0,
-          round: Map({
-            question: 'a question',
-            'answers': List.of(
-              'answer1',
-              'answer2'
-            ),
-            'correctAnswer': 1
-          })
+      const stateGame = Map({
+        user: 'Test User',
+        tally: 0,
+        round: Map({
+          question: 'a question',
+          'answers': List.of(
+            'answer1',
+            'answer2'
+          ),
+          'correctAnswer': 1
         })
       });
       const answer = 1;
-      const nextState = play(state, answer);
+      const nextState = play(stateGame, answer);
       expect(nextState).to.equal(Map({
-        entries: List(),
-        game: Map({
-          user: 'Test User',
-          tally: 1,
-          round: Map({
-            question: 'a question',
-            'answers': List.of(
-              'answer1',
-              'answer2'
-            ),
-            'correctAnswer': 1
-          })
+        user: 'Test User',
+        tally: 1,
+        round: Map({
+          question: 'a question',
+          'answers': List.of(
+            'answer1',
+            'answer2'
+          ),
+          'correctAnswer': 1
         })
       }));
     });
 
     it('user select incorrect answer', () => {
-      const state = Map({
-        entries: List(),
-        game: Map({
-          user: 'Test User',
-          tally: 0,
-          round: Map({
-            question: 'a question',
-            'answers': List.of(
-              'answer1',
-              'answer2'
-            ),
-            'correctAnswer': 1
-          })
+      const stateGame = Map({
+        user: 'Test User',
+        tally: 0,
+        round: Map({
+          question: 'a question',
+          'answers': List.of(
+            'answer1',
+            'answer2'
+          ),
+          'correctAnswer': 2
         })
       });
-      const answer = 2;
-      const nextState = play(state, answer);
+      const answer = 1;
+      const nextState = play(stateGame, answer);
       expect(nextState).to.equal(Map({
-        entries: List(),
-        game: Map({
-          user: 'Test User',
-          tally: 0,
-          round: Map({
-            question: 'a question',
-            'answers': List.of(
-              'answer1',
-              'answer2'
-            ),
-            'correctAnswer': 1
-          })
+        user: 'Test User',
+        tally: 0,
+        round: Map({
+          question: 'a question',
+          'answers': List.of(
+            'answer1',
+            'answer2'
+          ),
+          'correctAnswer': 2
         })
       }));
     });

@@ -9,6 +9,9 @@ export function setEntries(state, entries) {
 
 /*
 * Init user, tally and first round to star to play
+* @param Map state
+* @param string newUser
+* @TODO newUser will be a map (or object) in future versions
 */
 export function startGame(state, newUser) {
   const entries = state.get('entries');
@@ -27,21 +30,24 @@ export function startGame(state, newUser) {
 /*
 * Take answer selected by player and increment tally if
 * answer selected is equal to correctAnswer
+* @param Map gameState
+* @param integer answer
 */
-export function play(state, answer) {
-  const correctAnswer = state.getIn(['game', 'round','correctAnswer']);
+export function play(gameState, answer) {
+  const correctAnswer = gameState.getIn(['round','correctAnswer']);
   if (correctAnswer === answer) {
-    return state.updateIn(
-        ['game', 'tally'],
+    return gameState.updateIn(
+        ['tally'],
         tally => tally + 1
       );
   }
-  return state;
+  return gameState;
 }
 
 /*
 * Return next round if exists in entries
 * when entries is empty, dont return any round
+* @param Map state
 */
 export function next(state) {
   const entries = state.get('entries');
@@ -72,6 +78,7 @@ export function next(state) {
 * Return the only the results list in state.
 * For now, we return only the current game result
 * Later we have to send this result to server and it returns the complete list
+* @param Map state
 */
 export function setResults(state) {
   const userInGame = state.getIn(['game','user']);
