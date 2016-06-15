@@ -7,7 +7,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://127.0.0.1:3000',
     'webpack/hot/only-dev-server',
-    './src/index.js'
+    './src/index.jsx'
     //APP_PATH,
   ],
   module: {
