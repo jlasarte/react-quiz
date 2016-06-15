@@ -1,4 +1,4 @@
-import { Map, List, fromJS } from 'immutable'
+import { Map, List, fromJS } from 'immutable';
 
 /*
 * Include entries in state (to use before start a new game)
@@ -10,14 +10,14 @@ export function setEntries(state, entries) {
 /*
 * Init user, tally and first round to star to play
 */
-export function startGame(state, user) {
+export function startGame(state, newUser) {
   const entries = state.get('entries');
   return state.merge({
     game: Map(
       {
         round: entries.first(),
         tally: 0,
-        user: user
+        user: newUser
       }
     ),
     entries: entries.skip(1)
@@ -73,16 +73,16 @@ export function next(state) {
 * For now, we return only the current game result
 * Later we have to send this result to server and it returns the complete list
 */
-export function getResults(state) {
-  const user = state.getIn(['game','user']);
-  const tally = state.getIn(['game','tally']);
+export function setResults(state) {
+  const userInGame = state.getIn(['game','user']);
+  const tallyInGame = state.getIn(['game','tally']);
   if (!state.hasIn(['game','round'])) {
     return Map({
       results: List.of(
         Map(
           {
-            user: user,
-            tally: tally
+            user: userInGame,
+            tally: tallyInGame
           }
         )
       )
