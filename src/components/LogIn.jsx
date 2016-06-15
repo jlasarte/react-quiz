@@ -9,11 +9,11 @@ export const LogIn = React.createClass({
   },
 
   //The function decides if the user can continue
-  //taking in count if the username input was filled 
+  //taking in count if the username input was filled
   handleButtonClick(){
     if (this.state.userText && !this.flagToPlay) {
-      //@TODO: the setting of the user that is 
-      //going to play. 
+      //@TODO: the setting of the user that is
+      //going to play.
     } else {
       alert('You have to insert a name');
     }
@@ -31,14 +31,13 @@ export const LogIn = React.createClass({
   render() {
     return (<div>
       <label>Username</label>
-      <input 
+      <input
         onChange={this.handleTextInput}
         type='text'
       />
       <button disabled={this.state.flagToPlay} onClick={this.handleButtonClick} >
         Play !
       </button>
-    </div>)
-  }	
+    </div>);
+  }
 });
-
