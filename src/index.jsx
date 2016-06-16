@@ -1,10 +1,12 @@
+require('./css/bootstrap.css');
+require('./css/styles.css');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
- 
-import { LogIn } from './components/logInComponent';
- 
- 
+
+import Main from './components/Main';
+
 ReactDOM.render(
-  <LogIn /> ,
+  <Main appName='React Quiz' /> ,
   document.getElementById('app')
 );
