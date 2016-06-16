@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actionCreators from '../action_creators';
 
 export const LogIn = React.createClass({
   getInitialState() {
@@ -9,13 +11,11 @@ export const LogIn = React.createClass({
   },
 
   //The function decides if the user can continue
-  //taking in count if the username input was filled
+  //taking in count if the username input was filled,
+  //also executes the action to set the game.
   handleButtonClick(){
     if (this.state.userText && !this.flagToPlay) {
-      //@TODO: the setting of the user that is
-      //going to play.
-    } else {
-      alert('You have to insert a name');
+      this.props.startGame(this.state.userText);
     }
   },
 
@@ -39,5 +39,7 @@ export const LogIn = React.createClass({
         Play !
       </button>
     </div>);
-  }
+  }	
 });
+
+export const LogInContainer = connect(null, actionCreators)(LogIn);
