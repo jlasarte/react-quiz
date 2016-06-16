@@ -5,7 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, hashHistory } from 'react-router';
-import { LogInContainer } from './components/LogIn';
 import { createStore } from 'redux';
 import { MainContainer } from './components/Main';
 import Reducer from './core';

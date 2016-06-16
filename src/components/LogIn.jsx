@@ -37,5 +37,5 @@ export const LogIn = React.createClass({
         Play !
       </button>
     </div>);
-  }	
+  }
 });
