@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, hashHistory } from 'react-router';
 import { LogInContainer } from './components/LogIn';
 import { createStore } from 'redux';
-import Main from './components/Main';
+import { MainContainer } from './components/Main';
 import Reducer from './core';
 import Demo from './components/Demo';
 import { List, Map } from 'immutable';
@@ -34,7 +34,7 @@ const store = createStore(Reducer, initialState);
 ReactDOM.render(
   <Provider store={store}>  
     <Router history={hashHistory}>
-      <Route path='/' component={Main} />
+      <Route path='/' component={MainContainer} />
       <Route path='/demo' component={Demo} />
     </Router>
   </Provider>,

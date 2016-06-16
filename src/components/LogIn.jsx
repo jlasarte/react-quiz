@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import * as actionCreators from '../action_creators';
 
 export const LogIn = React.createClass({
   getInitialState() {
@@ -41,5 +39,3 @@ export const LogIn = React.createClass({
     </div>);
   }	
 });
-
-export const LogInContainer = connect(null, actionCreators)(LogIn);
