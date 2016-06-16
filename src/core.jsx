@@ -97,3 +97,13 @@ export function setResults(state) {
   }
   return state;
 }
+
+
+export default function (state = Map(), action) {
+  switch(action.type) {
+    case 'START_GAME':
+      return startGame(state, action.user);
+    default:
+      return state;
+  }
+}
