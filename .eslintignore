@@ -1,4 +1,5 @@
 # /node_modules/*  ignored by default
 
 # Ignore css files
-src/*.css
+src/css/*.css
+src/fonts/*

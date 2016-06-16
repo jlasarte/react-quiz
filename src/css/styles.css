@@ -3,5 +3,13 @@ html {
 }
 
 .main {
-  margin: 20px;
+  margin: 20px 25%;
+}
+
+.navbar {
+  min-height: 70px;
+}
+
+.navbar-brand-name {
+  margin: 0 20px 0 0;
 }
