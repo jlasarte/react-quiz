@@ -4,7 +4,8 @@
         "browser": true
       },
       "rules": {
-        "no-console": 1
+        "no-console": 1,
+        "react/jsx-sort-props": 0
       },
       "plugins": [
         "react"

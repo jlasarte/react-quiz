@@ -7,8 +7,11 @@ export default React.createClass({
   render: function() {
     return (
       <div className='main'>
-        <Header appName={this.props.appName} />
+        <Header appName='React Quiz' />
         <LogIn />
+        <div className='footer navbar navbar-default navbar-fixed-bottom'>
+          <a href='#/demo'>Components Demo</a>
+        </div>
       </div>
     );
   }
