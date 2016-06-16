@@ -9,5 +9,12 @@ import App from './components/app'
   document.getElementById('app')
 );
 */
-render(<App/>, document.getElementById('app'))
+
+ReactDOM.render(
+  <App/> ,
+  document.getElementById('app')
+);
+
+
+
 
