@@ -5,10 +5,9 @@ var APP_PATH = path.resolve(ROOT_PATH, 'src');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://127.0.0.1:3000',
     'webpack/hot/only-dev-server',
     './src/index.jsx'
-    //APP_PATH,
   ],
   module: {
     loaders: [

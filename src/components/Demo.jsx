@@ -1,5 +1,4 @@
 import React from 'react';
-import Highlight from 'react-highlight';
 
 import { LogIn } from './LogIn';
 import Header from './Header';
@@ -15,16 +14,16 @@ export default React.createClass({
         </ul>
         <div id='header-component' className='component-demo'>
           <h3>Header</h3>
-          <Highlight className='javascript'>
+          <div className='javascript'>
             {"<Header appName='name' />"}
-          </Highlight>
+          </div>
           <Header appName='React Quiz' />
         </div>
         <div id='login-component' className='component-demo'>
           <h3>LogIn</h3>
-          <Highlight className='javascript'>
+          <div className='javascript'>
             {"<LogIn />"}
-          </Highlight>
+          </div>
           <LogIn />
         </div>
       </div>
