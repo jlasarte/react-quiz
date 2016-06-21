@@ -103,6 +103,10 @@ export default function (state = Map(), action) {
   switch(action.type) {
     case 'START_GAME':
       return startGame(state, action.user);
+    case 'PLAY':
+      return state.update('game',(gameState) =>
+        play(gameState, action.answer)
+      )
     default:
       return state;
   }

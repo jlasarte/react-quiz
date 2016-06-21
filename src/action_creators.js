@@ -4,3 +4,10 @@ export function startGame(user){
     user: user
   };
 }
+
+export function play(id){
+  return {
+    type: 'PLAY',
+    answer: id
+  };
+}
