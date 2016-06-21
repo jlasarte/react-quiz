@@ -14,11 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
     noInfo: true,
     publicPath: config.output.publicPath
   }))
-} else {
-  const webpack = require('webpack')
-  const config = require('../webpack.prod.config.js')
-  const compiler = webpack(config)
-}
+} 
 
 app.listen(port)
 console.log('Listening at http://localhost:' + port)
