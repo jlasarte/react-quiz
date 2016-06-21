@@ -2,21 +2,21 @@ var webpack = require('webpack');
 var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'src');
-//var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
-var BUILD_PATH = path.join(__dirname, 'build');
+var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   entry: [
     //'webpack-dev-server/client?http://127.0.0.1:3000',
     //'webpack/hot/only-dev-server',
     //'./src/index.jsx'
-    './src/index'
+    './src/index.js'
     //APP_PATH,
   ],
   output: {
      path: BUILD_PATH,
-     publicPath: '/build/',
+     publicPath: '/',
      filename: 'bundle.js'
   },
   plugins: [
@@ -48,16 +48,6 @@ module.exports = {
           loader: 'file'}
     ]
   }
-  /*
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-      contentBase: './build',
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      progress: true
-  }
-  */
 };
+
+
