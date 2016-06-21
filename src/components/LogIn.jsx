@@ -1,6 +1,11 @@
 import React from 'react';
 
 export const LogIn = React.createClass({
+  // ask for `router` from context
+  contextTypes: {
+    router: React.PropTypes.object
+  },
+
   getInitialState() {
     return {
       userText: '',
@@ -14,6 +19,7 @@ export const LogIn = React.createClass({
   handleButtonClick(){
     if (this.state.userText && !this.flagToPlay) {
       this.props.startGame(this.state.userText);
+      this.context.router.push('/game')
     }
   },
 
