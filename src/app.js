@@ -18,3 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.listen(port)
 console.log('Listening at http://localhost:' + port)
+console.log('Ambiente: ' + process.env.NODE_ENV);

@@ -6,14 +6,8 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
-  entry: [
-    //'webpack-dev-server/client?http://127.0.0.1:3000',
-    //'webpack/hot/only-dev-server',
-    //'./src/index.jsx'
-    './src/index.jsx'
-    //APP_PATH,
-  ],
+  devtool: 'source-map',
+  entry: './src/index.js',
   output: {
      path: BUILD_PATH,
      publicPath: '/',
