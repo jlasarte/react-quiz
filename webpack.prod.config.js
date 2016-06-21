@@ -48,16 +48,6 @@ module.exports = {
           loader: 'file'}
     ]
   }
-  /*
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-      contentBase: './build',
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      progress: true
-  }
-  */
 };
+
+
