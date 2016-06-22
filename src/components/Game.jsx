@@ -10,8 +10,7 @@ export const Game = React.createClass({
   displayName: 'Game',
 
   propTypes: {
-    answersId: React.PropTypes.array,
-    answersText: React.PropTypes.array,
+    answers: React.PropTypes.array,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
@@ -34,15 +33,9 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
-          <Answer text={this.props.answersText[0]} id={this.props.answersId[0]}
-            play={this.props.play} 
-          />
-          <Answer text={this.props.answersText[1]} id={this.props.answersId[1]}
-            play={this.props.play} 
-          />
-          <Answer text={this.props.answersText[2]} id={this.props.answersId[2]}
-            play={this.props.play} 
-          />
+          {this.props.answers.map((ans) =>
+            <Answer id={ans.id} text={ans.text} play={this.props.play}/>
+          )}
         </div>
       </div>
     );
@@ -53,15 +46,17 @@ const mapStateToProps = state => {
   const arrayAnswers = [];
   const listAnswers = state.getIn(['game', 'round', 'answers']);
   for(let i = 0; i < 3; i++){
-    arrayAnswers.push(listAnswers.get(i));
+    arrayAnswers.push({
+      id: i,
+      text: listAnswers.get(i)
+    });
   }
 
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
-    answersId: [0,1,2],
-    answersText: arrayAnswers
+    answers: arrayAnswers
   };
 };
 
