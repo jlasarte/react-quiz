@@ -10,12 +10,8 @@ export const Game = React.createClass({
   displayName: 'Game',
 
   propTypes: {
-    answer1Id: React.PropTypes.number,
-    answer1Text: React.PropTypes.string,
-    answer2Id: React.PropTypes.number,
-    answer2Text: React.PropTypes.string,    
-    answer3Id: React.PropTypes.number,   
-    answer3Text: React.PropTypes.string,
+    answersId: React.PropTypes.array,
+    answersText: React.PropTypes.array,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
@@ -38,13 +34,13 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
-          <Answer text={this.props.answer1Text} id={this.props.answer1Id}
+          <Answer text={this.props.answersText[0]} id={this.props.answersId[0]}
             play={this.props.play} 
           />
-          <Answer text={this.props.answer2Text} id={this.props.answer2Id}
+          <Answer text={this.props.answersText[1]} id={this.props.answersId[1]}
             play={this.props.play} 
           />
-          <Answer text={this.props.answer3Text} id={this.props.answer3Id}
+          <Answer text={this.props.answersText[2]} id={this.props.answersId[2]}
             play={this.props.play} 
           />
         </div>
@@ -54,16 +50,18 @@ export const Game = React.createClass({
 });
 
 const mapStateToProps = state => {
+  const arrayAnswers = [];
+  const listAnswers = state.getIn(['game', 'round', 'answers']);
+  for(let i = 0; i < 3; i++){
+    arrayAnswers.push(listAnswers.get(i));
+  }
+
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
-    answer1Text: state.getIn(['game', 'round', 'answers']).get(0),
-    answer1Id: 0,
-    answer2Text: state.getIn(['game', 'round', 'answers']).get(1),
-    answer2Id: 1,
-    answer3Text: state.getIn(['game', 'round', 'answers']).get(2),
-    answer3Id: 2
+    answersId: [0,1,2],
+    answersText: arrayAnswers
   };
 };
 
