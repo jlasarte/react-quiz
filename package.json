@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "watch": "webpack-dev-server --config ./webpack.dev.config.js --host 127.0.0.1 --port 3000",
-    "start": "npm run build & node ./src/app.jss",
+    "start": "npm run build & node ./src/app.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint \"src/**\" \"test/**\" --ext .js --ext .jsx --cache"
