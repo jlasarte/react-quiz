@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/jlasarte/react-quiz#readme",
   "devDependencies": {
-    "babel": "^6.5.2",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
@@ -53,6 +52,7 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
+    "babel": "^6.5.2",
     "webpack": "^1.13.1",
     "express": "^4.13.4",
     "immutable": "^3.8.1",
