@@ -40,9 +40,9 @@ export default React.createClass({
         <div id='question-component' className='component-demo'>
           <h3>Question</h3>
           <div className='javascript'>
-            {"<Question question='Is this a question?' />"}
+            {"<Question questionText='Is this a question?' />"}
           </div>
-          <Question question='Is this a question?' />
+          <Question questionText='Is this a question?' />
         </div>
       </div>
     );
