@@ -10,7 +10,6 @@ import { MainContainer } from './components/Main';
 import { GameContainer } from './components/Game';
 import Reducer from './core';
 import Demo from './components/Demo';
-import { List, Map } from 'immutable';
 
 const entries = [
   {
@@ -33,11 +32,7 @@ const entries = [
   }
 ];
 const store = createStore(Reducer);
-store.dispatch({type: 'SET_ENTRIES', entries: entries});
-
-store.subscribe(function(){
-  console.log(store.getState());
-});
+store.dispatch({ type: 'SET_ENTRIES', entries: entries });
 
 ReactDOM.render(
   <Provider store={store}>

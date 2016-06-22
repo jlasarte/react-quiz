@@ -52,7 +52,9 @@ export const LogIn = React.createClass({
         </div>
         <div className='row login-play-button'>
           <div className='col-md-12'>
-            <button className='btn btn-lg btn-primary' disabled={this.state.flagToPlay} onClick={this.handleButtonClick} >
+            <button className='btn btn-lg btn-primary' disabled={this.state.flagToPlay}
+              onClick={this.handleButtonClick}
+            >
               Play !
             </button>
           </div>

@@ -5,6 +5,7 @@ import Header from './Header';
 import Question from './Question';
 
 export default React.createClass({
+  displayName: 'Demo',
   render() {
     return (
       <div className='main'>
