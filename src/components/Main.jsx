@@ -9,7 +9,7 @@ export const Main = React.createClass({
     return (
       <div className='main container'>
         <Header appName='React Quiz' />
-        <LogIn {...this.props}/>
+        <LogIn {...this.props} />
         <div className='footer navbar navbar-default navbar-fixed-bottom'>
           <a href='#/demo'>Components Demo</a>
         </div>

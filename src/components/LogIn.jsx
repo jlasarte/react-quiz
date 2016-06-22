@@ -20,8 +20,8 @@ export const LogIn = React.createClass({
   handleButtonClick(){
     if (this.state.userText && !this.flagToPlay) {
       this.props.startGame(this.state.userText);
-      console.log(this.router);
-      this.context.router.push('/game');
+      // se supone q debo usar this.context.router.push pero no anda :(
+      this.props.history.push('/game');
     }
   },
 
