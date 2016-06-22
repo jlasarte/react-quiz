@@ -1,6 +1,12 @@
 import React from 'react';
 
 export const LogIn = React.createClass({
+  displayName: 'LogIn',
+
+  propTypes: {
+    startGame: React.PropTypes.func
+  },
+
   getInitialState() {
     return {
       userText: '',
@@ -33,7 +39,9 @@ export const LogIn = React.createClass({
         onChange={this.handleTextInput}
         type='text'
       />
-      <button disabled={this.state.flagToPlay} onClick={this.handleButtonClick} >
+      <button disabled={this.state.flagToPlay}
+        onClick={this.handleButtonClick}
+      >
         Play !
       </button>
     </div>);

@@ -101,8 +101,18 @@ export function setResults(state) {
 
 export default function (state = Map(), action) {
   switch(action.type) {
+    case 'SET_ENTRIES':
+      return setEntries(state, action.entries);
     case 'START_GAME':
       return startGame(state, action.user);
+    case 'PLAY':
+      return state.update('game',(gameState) =>
+        play(gameState, action.answer)
+      )
+    case 'NEXT':
+        return next(state);
+    case 'SET_RESULTS':
+      return setResults(state);
     default:
       return state;
   }
