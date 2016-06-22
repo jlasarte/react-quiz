@@ -2,6 +2,7 @@ import React from 'react';
 
 import { LogIn } from './LogIn';
 import Header from './Header';
+import Question from './Question';
 import { Answer } from './Answer';
 
 export default React.createClass({
@@ -35,6 +36,13 @@ export default React.createClass({
           {"<Answer text='answerText' id='answerIndex' play='action' />"}
           </div>            
           <Answer text="I'm the Answer's text!" />
+        </div>
+        <div id='question-component' className='component-demo'>
+          <h3>Question</h3>
+          <div className='javascript'>
+            {"<Question question='Is this a question?' />"}
+          </div>
+          <Question question='Is this a question?' />
         </div>
       </div>
     );

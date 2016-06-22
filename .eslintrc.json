@@ -5,7 +5,8 @@
       },
       "rules": {
         "no-console": 1,
-        "react/jsx-sort-props": 0
+        "react/jsx-sort-props": 0,
+        "react/jsx-no-literals": 0
       },
       "plugins": [
         "react"
