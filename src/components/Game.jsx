@@ -8,13 +8,20 @@ import * as actionCreators from '../action_creators';
 export const Game = React.createClass({
   render: function() {
     return (
-      <div className='main'>
+      <div className='main container'>
         <Header appName='React Quiz' />
         <div className='row'>
-          <div className='col-md-10 col-md-offset-9'>
-            <Tally total={this.props.tally} />
+          <div className='col-md-6'>
+            <p className='user'>
+                Player: {this.props.userName}
+            </p>
           </div>
-        </div>    
+          <div className='col-md-6'>
+            <span className='text-right tally'>
+              <Tally total={this.props.tally} />
+            </span>
+          </div>
+        </div>
         <div className='game'>
           <Question text={this.props.question} />
         </div>
@@ -27,6 +34,7 @@ const mapStateToProps = (state) => {
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
+    userName: state.getIn(['game', 'user'])
   }
 }
 

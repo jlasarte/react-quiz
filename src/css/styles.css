@@ -6,6 +6,9 @@ html {
   margin: 20px 25%;
 }
 
+.container {
+  width: 800px;
+}
 .navbar {
   min-height: 70px;
 }
@@ -24,6 +27,45 @@ html {
 
 .game {
   margin: 20px;
-  background: green;
+  background: #c3d500;
   padding: 20px;
+}
+
+.user {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.question {
+  font-size: 18px;
+}
+
+.login {
+  margin: 0 25% auto;
+  padding-top: 80px;
+}
+
+.login-label {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-input {
+  width: 100%;
+  font-size: 18px;
+}
+
+.login-play-button {
+  padding-top: 20px;
+  margin: 0 25% auto;
+}
+
+.login-play-button .btn {
+  width: 100%;
+}
+
+.tally {
+
 }

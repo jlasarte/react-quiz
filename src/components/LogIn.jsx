@@ -33,15 +33,28 @@ export const LogIn = React.createClass({
   },
 
   render() {
-    return (<div>
-      <label>Username</label>
-      <input
-        onChange={this.handleTextInput}
-        type='text'
-      />
-      <button disabled={this.state.flagToPlay} onClick={this.handleButtonClick} >
-        Play !
-      </button>
-    </div>);
+    return (
+      <div className='login'>
+        <div className='row'>
+          <div className='col-md-12'>
+            <label className='login-label'>Username</label>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-12'>
+            <input className='login-input'
+              onChange={this.handleTextInput}
+              type='text'
+            />
+          </div>
+        </div>
+        <div className='row login-play-button'>
+          <div className='col-md-12'>
+            <button className='btn btn-lg btn-primary' disabled={this.state.flagToPlay} onClick={this.handleButtonClick} >
+              Play !
+            </button>
+          </div>
+        </div>
+      </div>);
   }
 });
