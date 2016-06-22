@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Question from './Question';
 import Tally from './Tally';
+import Next from './Next';
 import * as actionCreators from '../action_creators';
 
 export const Game = React.createClass({
@@ -30,6 +31,7 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
+          <Next />
         </div>
       </div>
     );
