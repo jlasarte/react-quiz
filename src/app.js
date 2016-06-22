@@ -14,7 +14,8 @@ if (process.env.NODE_ENV !== 'production') {
     noInfo: true,
     publicPath: config.output.publicPath
   }))
-}
+} 
 
 app.listen(port)
 console.log('Listening at http://localhost:' + port)
+console.log('Ambiente: ' + process.env.NODE_ENV);
