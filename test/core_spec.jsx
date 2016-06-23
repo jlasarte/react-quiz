@@ -155,7 +155,8 @@ describe('application logic', () => {
             'answer1',
             'answer2'
           ),
-          'correctAnswer': 1
+          'correctAnswer': 1,
+          'selectedAnswer': 1
         })
       }));
     });
@@ -184,7 +185,8 @@ describe('application logic', () => {
             'answer1',
             'answer2'
           ),
-          'correctAnswer': 2
+          'correctAnswer': 2,
+          'selectedAnswer': 1
         })
       }));
     });

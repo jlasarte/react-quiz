@@ -12,17 +12,18 @@ export const Game = React.createClass({
   displayName: 'Game',
 
   propTypes: {
-    answersId: React.PropTypes.array,
-    answersText: React.PropTypes.array,
+    answers: React.PropTypes.object,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
-    userName: React.PropTypes.string
+    userName: React.PropTypes.string,
+    selected: React.PropTypes.number,
+    next: React.PropTypes.func
   },
 
   render() {
     return (
-      <div className='main container'>
+      <div className='main container-fluid'>
         <Header appName='React Quiz' />
         <div className='row'>
           <div className='col-md-6'>
@@ -36,37 +37,26 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
-
-          <Answer text={this.props.answersText[0]} id={this.props.answersId[0]}
-            play={this.props.play}
-          />
-          <Answer text={this.props.answersText[1]} id={this.props.answersId[1]}
-            play={this.props.play}
-          />
-          <Answer text={this.props.answersText[2]} id={this.props.answersId[2]}
-            play={this.props.play}
-          />
+          {this.props.answers.map( ans =>
+            <Answer key={ans.get('id')} id={ans.get('id')}
+              text={ans.get('text')} play={this.props.play}
+            />
+          )}
 
         </div>
-        <Next />
+        {this.props.selected ? <Next next={this.props.next} /> : ''}
       </div>
     );
   }
 });
 
 const mapStateToProps = state => {
-  const arrayAnswers = [];
-  const listAnswers = state.getIn(['game', 'round', 'answers']);
-  for(let i = 0; i < 3; i++){
-    arrayAnswers.push(listAnswers.get(i));
-  }
-
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
-    answersId: [0,1,2],
-    answersText: arrayAnswers
+    answers: state.getIn(['game', 'round', 'answers']),
+    selected: state.getIn(['game', 'round', 'selectedAnswer'])
   };
 };
 

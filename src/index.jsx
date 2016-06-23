@@ -15,18 +15,17 @@ const entries = [
   {
     'question': 'When was Globant founded?',
     'answers': [
-      '2000',
-      '2003',
-      '2008'
+      { 'id': 1, 'text': '2000' },
+      { 'id': 2, 'text': '2003' },
+      { 'id': 3, 'text': '2008' }
     ],
     'correctAnswer': 1
   },
   {
     'question': 'another question',
     'answers': [
-      'answer1',
-      'answer2',
-      'answer2'
+      { 'id': 1, 'text': 'answer 1' },
+      { 'id': 2, 'text': 'answer 2' }
     ],
     'correctAnswer': 2
   }
