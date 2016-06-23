@@ -3,23 +3,27 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Question from './Question';
 import Tally from './Tally';
+import Next from './Next';
 import { Answer } from './Answer';
+
 import * as actionCreators from '../action_creators';
 
 export const Game = React.createClass({
   displayName: 'Game',
 
   propTypes: {
-    answers: React.PropTypes.array,
+    answers: React.PropTypes.object,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
-    userName: React.PropTypes.string  
+    userName: React.PropTypes.string,
+    selected: React.PropTypes.number,
+    next: React.PropTypes.func
   },
 
   render() {
     return (
-      <div className='main container'>
+      <div className='main container-fluid'>
         <Header appName='React Quiz' />
         <div className='row'>
           <div className='col-md-6'>
@@ -33,30 +37,26 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
-          {this.props.answers.map((ans) =>
-            <Answer id={ans.id} text={ans.text} play={this.props.play}/>
+          {this.props.answers.map( ans =>
+            <Answer key={ans.get('id')} id={ans.get('id')}
+              text={ans.get('text')} play={this.props.play}
+            />
           )}
+
         </div>
+        {this.props.selected ? <Next next={this.props.next} /> : ''}
       </div>
     );
   }
 });
 
 const mapStateToProps = state => {
-  const arrayAnswers = [];
-  const listAnswers = state.getIn(['game', 'round', 'answers']);
-  for(let i = 0; i < 3; i++){
-    arrayAnswers.push({
-      id: i,
-      text: listAnswers.get(i)
-    });
-  }
-
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
-    answers: arrayAnswers
+    answers: state.getIn(['game', 'round', 'answers']),
+    selected: state.getIn(['game', 'round', 'selectedAnswer'])
   };
 };
 

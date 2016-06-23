@@ -57,7 +57,7 @@ html {
   font-size: 18px;
 }
 
-.login-play-button {
+.login-play-button, .next-button {
   padding-top: 20px;
   margin: 0 25% auto;
 }
