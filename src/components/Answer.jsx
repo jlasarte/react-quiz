@@ -6,6 +6,7 @@ export const Answer = React.createClass({
   propTypes: {
     id: React.PropTypes.number,
     play: React.PropTypes.func,
+    style: React.PropTypes.string,
     text: React.PropTypes.string
   },
 
@@ -13,8 +14,12 @@ export const Answer = React.createClass({
     this.props.play(this.props.id);
   },
 
+  getStyleClass() {
+    return `answerBlock centeredElement ${this.props.style}`;
+  },
+
   render() {
-    return (<div className='answerBlock centeredElement' onClick={this.handleClickAnswer}>
+    return (<div className={this.getStyleClass()} onClick={this.handleClickAnswer}>
       <p>{this.props.text}</p>
     </div>);
   }
