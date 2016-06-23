@@ -91,7 +91,7 @@ html {
   margin: 0;
 }
 
-.answerBlock:hover{
+.answerBlockHover:hover{
   background-color:#a6a6a6;
   color: #000;
 }
