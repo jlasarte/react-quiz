@@ -4,22 +4,42 @@ import Header from './Header';
 import Question from './Question';
 import Tally from './Tally';
 import { Answer } from './Answer';
+
 import * as actionCreators from '../action_creators';
 
 export const Game = React.createClass({
   displayName: 'Game',
 
   propTypes: {
-    answers: React.PropTypes.array,
+    answers: React.PropTypes.object,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
-    userName: React.PropTypes.string  
+    userName: React.PropTypes.string,
+    selected: React.PropTypes.number,
+    next: React.PropTypes.func
+  },
+
+  setAnswerStyle(id){
+    console.log(id)
+    if(this.props.selected){
+        console.log('asda');
+        if(id == this.props.correct){
+          return 'correctAnswer';
+        } else if(id == this.props.selected){
+          return ('incorrectAnswer');
+        } else {
+          return '';
+        }
+      }
+    else {
+      return '';
+    }
   },
 
   render() {
     return (
-      <div className='main container'>
+      <div className='main container-fluid'>
         <Header appName='React Quiz' />
         <div className='row'>
           <div className='col-md-6'>
@@ -34,11 +54,12 @@ export const Game = React.createClass({
         <div className='game'>
           <Question questionText={this.props.question} />
           {this.props.answers.map( ans =>
-            <Answer key={ans.id} id={ans.id}
-              text={ans.text} play={this.props.play}
-              style={ans.styleClass}
+            <Answer key={ans.get('id')} id={ans.get('id')}
+              text={ans.get('text')} play={this.props.play}
+              style={this.setAnswerStyle(ans.get('id'))} select={this.props.selected}
             />
           )}
+
         </div>
       </div>
     );
@@ -46,39 +67,13 @@ export const Game = React.createClass({
 });
 
 const mapStateToProps = state => {
-  const arrayAnswers = [];
-  const listAnswers = state.getIn(['game', 'round', 'answers']);
-  const correctAnswer = state.getIn(['game','round', 'correctAnswer']);
-  const selectedAnswer = state.getIn(['game','round', 'selectedAnswer']);
-  const answersClasses = [];
-
-  //If the user has selected an answer then this if is true
-  //and the styles are set for every answer.
-  if(selectedAnswer >= 0){
-    for(let i = 0; i < listAnswers.count(); i++){
-      if(i == correctAnswer){
-        answersClasses.push('correctAnswer');
-      } else if(i == selectedAnswer){
-        answersClasses.push('incorrectAnswer');
-      } else {
-        answersClasses.push('');
-      }
-    }
-  }
-
-  for(let i = 0; i < listAnswers.count(); i++){
-    arrayAnswers.push({
-      id: i,
-      text: listAnswers.get(i),
-      styleClass: answersClasses[i] ? answersClasses[i] : ''
-    });
-  }
-
   return {
     question: state.getIn(['game', 'round', 'question']),
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
-    answers: arrayAnswers
+    answers: state.getIn(['game', 'round', 'answers']),
+    correct: state.getIn(['game','round','correctAnswer']),
+    selected: state.getIn(['game', 'round', 'selectedAnswer'])
   };
 };
 

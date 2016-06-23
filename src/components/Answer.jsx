@@ -19,8 +19,11 @@ export const Answer = React.createClass({
   },
 
   render() {
-    return (<div className={this.getStyleClass()} onClick={this.handleClickAnswer}>
-      <p>{this.props.text}</p>
-    </div>);
+    return (
+      <button className={this.getStyleClass()} onClick={this.handleClickAnswer}
+        disabled={this.props.select} 
+      >
+      {this.props.text}
+    </button>);
   }
 });
