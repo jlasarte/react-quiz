@@ -6,6 +6,7 @@ export const Answer = React.createClass({
   propTypes: {
     id: React.PropTypes.number,
     play: React.PropTypes.func,
+    select: React.PropTypes.bool,
     style: React.PropTypes.string,
     text: React.PropTypes.string
   },
@@ -15,12 +16,18 @@ export const Answer = React.createClass({
   },
 
   getStyleClass() {
-    return `answerBlock centeredElement ${this.props.style}`;
+    if(!this.props.select)
+      return `answerBlock answerBlockHover centeredElement`;
+    else
+      return `answerBlock centeredElement ${this.props.style}`
   },
 
   render() {
-    return (<div className={this.getStyleClass()} onClick={this.handleClickAnswer}>
-      <p>{this.props.text}</p>
-    </div>);
+    return (
+      <button className={this.getStyleClass()} onClick={this.handleClickAnswer}
+        disabled={this.props.select} 
+      >
+        {this.props.text}
+    </button>);
   }
 });

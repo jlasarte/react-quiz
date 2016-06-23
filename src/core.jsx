@@ -35,13 +35,18 @@ export function startGame(state, newUser) {
 */
 export function play(gameState, answer) {
   const correctAnswer = gameState.getIn(['round','correctAnswer']);
+  const selected = fromJS({
+    round: {
+      selectedAnswer: answer
+    }
+  });
   if (correctAnswer === answer) {
     return gameState.updateIn(
         ['tally'],
         tally => tally + 1
-      );
+      ).mergeDeep(selected);
   }
-  return gameState;
+  return gameState.mergeDeep(selected);
 }
 
 /*
