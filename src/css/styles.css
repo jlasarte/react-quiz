@@ -27,7 +27,7 @@ html {
 
 .game {
   margin: 20px;
-  background: #c3d500;
+  background: #1a75ff;
   padding: 20px;
 }
 
@@ -81,9 +81,10 @@ html {
   margin-bottom: 20px;
   text-align: center;
   font-size: 20px;
-  color: #FFF;
-  background-color: #1a75ff;
+  color: #000;
+  background-color: #FFF;
   padding: 5px;
+  border: 2px solid #1a75ff;
 }
 
 .answerBlock > p {
