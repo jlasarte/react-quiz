@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 export default React.createClass({
   displayName: 'Next',
@@ -10,19 +11,13 @@ export default React.createClass({
   /*
   * manage button click to pass to next round
   */
-  handleButtonClick(){ 
+  handleButtonClick(){
     this.props.next();
   },
 
   render: function() {
     return (
-      <div className='row next-button'>
-        <div className='col-md-12'>
-          <button className='btn btn-lg btn-primary center-block fadeInUp' onClick={this.handleButtonClick}>
-            Next Round
-          </button>
-        </div>
-      </div>
+      <Button text='Next Round' onHandleButtonClick={this.handleButtonClick} />
     );
   }
 });

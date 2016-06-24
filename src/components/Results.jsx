@@ -1,11 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
+import Button from './Button';
 import * as actionCreators from '../action_creators';
 import { entries } from '../entries';
 
 export const Results = React.createClass({
+  displayName: 'Results',
 
+  propTypes: {
+    tally: React.PropTypes.number,
+    userName: React.PropTypes.string,
+    history: React.PropTypes.object
+  },
   handleButtonClick(){
     const user = this.props.userName;
     this.props.setEntries(entries);
@@ -19,13 +26,7 @@ export const Results = React.createClass({
         <Header appName='React Quiz' />
         Results
 
-        <div className='row next-button'>
-          <div className='col-md-12'>
-            <button className='btn btn-lg btn-primary center-block' onClick={this.handleButtonClick}>
-              Play Again!
-            </button>
-          </div>
-        </div>
+        <Button text='Play Again!' onHandleButtonClick={this.handleButtonClick} />
       </div>
     );
   }

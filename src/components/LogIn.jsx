@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 export const LogIn = React.createClass({
   displayName: 'LogIn',
@@ -50,15 +51,9 @@ export const LogIn = React.createClass({
             />
           </div>
         </div>
-        <div className='row login-play-button'>
-          <div className='col-md-12'>
-            <button className='btn btn-lg btn-primary' disabled={this.state.flagToPlay}
-              onClick={this.handleButtonClick}
-            >
-              Play !
-            </button>
-          </div>
-        </div>
+        <Button text='Play Again!' onHandleButtonClick={this.handleButtonClick}
+          disabled={this.state.flagToPlay}
+        />
       </div>);
   }
 });
