@@ -10,10 +10,8 @@ export default React.createClass({
   /*
   * manage button click to pass to next round
   */
-  handleButtonClick(){
+  handleButtonClick(){ 
     this.props.next();
-    // se supone q debo usar this.context.router.push pero no anda :(
-    //this.props.history.push('/results');
   },
 
   render: function() {
