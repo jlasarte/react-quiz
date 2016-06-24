@@ -18,7 +18,7 @@ export default React.createClass({
     return (
       <div className='row next-button'>
         <div className='col-md-12'>
-          <button className='btn btn-lg btn-primary center-block' onClick={this.handleButtonClick}>
+          <button className='btn btn-lg btn-primary center-block fadeInUp' onClick={this.handleButtonClick}>
             Next Round
           </button>
         </div>
