@@ -10,7 +10,7 @@ export default React.createClass({
     return (
       <div className='row button'>
         <div className='col-md-12'>
-          <button className='btn btn-lg btn-primary center-block'
+          <button className='btn btn-lg btn-primary center-block fadeInUp'
             onClick={this.props.onHandleButtonClick}
             disabled={this.props.disabled}
           >

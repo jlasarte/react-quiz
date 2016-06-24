@@ -7,8 +7,8 @@ export default React.createClass({
   },
   render: function() {
     return (
-      <div className='question panel panel-default'>
-        <div className='panel-body'>
+      <div className='question panel panel-default' >
+        <div className='panel-body' >
           {this.props.questionText}
         </div>
       </div>
