@@ -48,7 +48,7 @@ export const entries = [
     'question': '¿Cuál es el ojo defectuoso de Popeye? ',
     'answers': [
       { 'id': 1, 'text': 'El derecho' },
-      { 'id': 2, 'text': 'El izquierdo' },
+      { 'id': 2, 'text': 'El izquierdo' }
     ],
     'correctAnswer': 1
   }
