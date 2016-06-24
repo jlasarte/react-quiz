@@ -8,6 +8,7 @@ import { Router, Route, hashHistory } from 'react-router';
 import { createStore } from 'redux';
 import { MainContainer } from './components/Main';
 import { GameContainer } from './components/Game';
+import { ResultsContainer } from './components/Results';
 import Reducer from './core';
 import Demo from './components/Demo';
 
@@ -40,6 +41,7 @@ ReactDOM.render(
       <Route path='/' component={MainContainer} />
       <Route path='/game' component={GameContainer} />
       <Route path='/demo' component={Demo} />
+      <Route path='/results' component={ResultsContainer} />
     </Router>
   </Provider>,
   document.getElementById('app')

@@ -22,6 +22,13 @@ export const Game = React.createClass({
     next: React.PropTypes.func
   },
 
+  componentWillUpdate: function(nextProps){
+
+    if (!nextProps.answers) {
+      this.props.history.push('/results');
+    }
+  },
+
   setAnswerStyle(id){
     if(this.props.selected){
       if(id == this.props.correct){
@@ -29,7 +36,7 @@ export const Game = React.createClass({
       } else if(id == this.props.selected){
         return ('incorrectAnswer');
       }
-    }     
+    }
     return '';
   },
 
