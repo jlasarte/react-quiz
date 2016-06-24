@@ -17,9 +17,9 @@ export const Answer = React.createClass({
 
   getStyleClass() {
     if(!this.props.select)
-      return `answerBlock answerBlockHover centeredElement`;
+      return 'answerBlock answerBlockHover centeredElement';
     else
-      return `answerBlock centeredElement ${this.props.style}`
+      return `answerBlock centeredElement ${this.props.style}`;
   },
 
   render() {
@@ -28,6 +28,6 @@ export const Answer = React.createClass({
         disabled={this.props.select} 
       >
         {this.props.text}
-    </button>);
+      </button>);
   }
 });

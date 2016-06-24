@@ -28,13 +28,9 @@ export const Game = React.createClass({
         return 'correctAnswer';
       } else if(id == this.props.selected){
         return ('incorrectAnswer');
-      } else {
-        return '';
       }
-    }
-    else {
-      return '';
-    }
+    }     
+    return '';
   },
 
   render() {
