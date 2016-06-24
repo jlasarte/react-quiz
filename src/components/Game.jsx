@@ -62,7 +62,6 @@ export const Game = React.createClass({
               style={this.setAnswerStyle(ans.get('id'))} select={this.props.selected}
             />
           ) : ''}
-
         </div>
         {this.props.selected ? <Next next={this.props.next} /> : ''}
       </div>
