@@ -11,26 +11,7 @@ import { GameContainer } from './components/Game';
 import { ResultsContainer } from './components/Results';
 import Reducer from './core';
 import Demo from './components/Demo';
-
-const entries = [
-  {
-    'question': 'When was Globant founded?',
-    'answers': [
-      { 'id': 1, 'text': '2000' },
-      { 'id': 2, 'text': '2003' },
-      { 'id': 3, 'text': '2008' }
-    ],
-    'correctAnswer': 2
-  },
-  {
-    'question': 'another question',
-    'answers': [
-      { 'id': 1, 'text': 'answer 1' },
-      { 'id': 2, 'text': 'answer 2' }
-    ],
-    'correctAnswer': 2
-  }
-];
+import { entries } from './entries';
 
 const store = createStore(Reducer);
 store.dispatch({ type: 'SET_ENTRIES', entries: entries });
