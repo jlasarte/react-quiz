@@ -13,7 +13,7 @@ export const Game = React.createClass({
 
   propTypes: {
     answers: React.PropTypes.object,
-    correct: React.PropTypes.string,
+    correct: React.PropTypes.number,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,

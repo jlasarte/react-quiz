@@ -6,7 +6,7 @@ export const Answer = React.createClass({
   propTypes: {
     id: React.PropTypes.number,
     play: React.PropTypes.func,
-    select: React.PropTypes.bool,
+    select: React.PropTypes.number,
     style: React.PropTypes.string,
     text: React.PropTypes.string
   },
