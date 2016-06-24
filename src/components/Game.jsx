@@ -13,6 +13,7 @@ export const Game = React.createClass({
 
   propTypes: {
     answers: React.PropTypes.object,
+    correct: React.PropTypes.string,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
@@ -22,17 +23,15 @@ export const Game = React.createClass({
   },
 
   setAnswerStyle(id){
-    console.log(id)
     if(this.props.selected){
-        console.log('asda');
-        if(id == this.props.correct){
-          return 'correctAnswer';
-        } else if(id == this.props.selected){
-          return ('incorrectAnswer');
-        } else {
-          return '';
-        }
+      if(id == this.props.correct){
+        return 'correctAnswer';
+      } else if(id == this.props.selected){
+        return ('incorrectAnswer');
+      } else {
+        return '';
       }
+    }
     else {
       return '';
     }
