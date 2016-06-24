@@ -13,12 +13,24 @@ export const Game = React.createClass({
 
   propTypes: {
     answers: React.PropTypes.object,
+    correct: React.PropTypes.string,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
     userName: React.PropTypes.string,
     selected: React.PropTypes.number,
     next: React.PropTypes.func
+  },
+
+  setAnswerStyle(id){
+    if(this.props.selected){
+      if(id == this.props.correct){
+        return 'correctAnswer';
+      } else if(id == this.props.selected){
+        return ('incorrectAnswer');
+      }
+    }     
+    return '';
   },
 
   render() {
@@ -40,6 +52,7 @@ export const Game = React.createClass({
           {this.props.answers.map( ans =>
             <Answer key={ans.get('id')} id={ans.get('id')}
               text={ans.get('text')} play={this.props.play}
+              style={this.setAnswerStyle(ans.get('id'))} select={this.props.selected}
             />
           )}
 
@@ -56,6 +69,7 @@ const mapStateToProps = state => {
     tally: state.getIn(['game', 'tally']),
     userName: state.getIn(['game', 'user']),
     answers: state.getIn(['game', 'round', 'answers']),
+    correct: state.getIn(['game','round','correctAnswer']),
     selected: state.getIn(['game', 'round', 'selectedAnswer'])
   };
 };

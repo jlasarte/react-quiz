@@ -19,7 +19,7 @@ const entries = [
       { 'id': 2, 'text': '2003' },
       { 'id': 3, 'text': '2008' }
     ],
-    'correctAnswer': 1
+    'correctAnswer': 2
   },
   {
     'question': 'another question',
@@ -30,6 +30,7 @@ const entries = [
     'correctAnswer': 2
   }
 ];
+
 const store = createStore(Reducer);
 store.dispatch({ type: 'SET_ENTRIES', entries: entries });
 
