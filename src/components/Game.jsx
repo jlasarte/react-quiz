@@ -56,12 +56,12 @@ export const Game = React.createClass({
         </div>
         <div className='game'>
           <Question questionText={this.props.question} />
-          {this.props.answers.map( ans =>
+          {this.props.answers ? this.props.answers.map( ans =>
             <Answer key={ans.get('id')} id={ans.get('id')}
               text={ans.get('text')} play={this.props.play}
               style={this.setAnswerStyle(ans.get('id'))} select={this.props.selected}
             />
-          )}
+          ) : ''}
 
         </div>
         {this.props.selected ? <Next next={this.props.next} /> : ''}
