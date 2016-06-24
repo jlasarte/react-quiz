@@ -17,17 +17,28 @@ export const Answer = React.createClass({
 
   getStyleClass() {
     if(!this.props.select)
-      return 'answerBlock answerBlockHover centeredElement';
+      return 'answerBlock answerBlockHover centeredElement fadeInUp';
     else
       return `answerBlock centeredElement ${this.props.style}`;
   },
 
+  getIcon(){
+    if(this.props.select == this.props.id && this.props.style == 'correctAnswer') {
+      return 'glyphicon glyphicon-ok-circle';
+    }
+    else if (this.props.select == this.props.id){
+      return 'glyphicon glyphicon-remove-circle';
+    }
+  },
+
   render() {
-    return (
+    return (<div>
       <button className={this.getStyleClass()} onClick={this.handleClickAnswer}
         disabled={this.props.select} 
       >
+        <span className={this.getIcon()}></span>
         {this.props.text}
-      </button>);
+      </button>
+    </div>);
   }
 });
