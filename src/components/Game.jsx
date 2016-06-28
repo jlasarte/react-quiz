@@ -4,6 +4,7 @@ import Header from './Header';
 import Question from './Question';
 import Tally from './Tally';
 import Next from './Next';
+import Quit from './Quit';
 import { Answer } from './Answer';
 
 import * as actionCreators from '../action_creators';
@@ -64,6 +65,7 @@ export const Game = React.createClass({
           ) : ''}
         </div>
         {this.props.selected ? <Next next={this.props.next} /> : ''}
+        <Quit history={this.props.history}/>
       </div>
     );
   }

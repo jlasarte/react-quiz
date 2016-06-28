@@ -11,10 +11,8 @@ import { GameContainer } from './components/Game';
 import { ResultsContainer } from './components/Results';
 import Reducer from './core';
 import Demo from './components/Demo';
-import { entries } from './entries';
 
 const store = createStore(Reducer);
-store.dispatch({ type: 'SET_ENTRIES', entries: entries });
 
 ReactDOM.render(
   <Provider store={store}>
