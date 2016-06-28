@@ -15,7 +15,7 @@ export default React.createClass({
     this.props.next();
   },
 
-  render: function() {
+  render() {
     return (
       <Button text='Next Round' onHandleButtonClick={this.handleButtonClick} />
     );

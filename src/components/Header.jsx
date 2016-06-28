@@ -1,11 +1,13 @@
 import React from 'react';
 
 export default React.createClass({
+  displayName: 'Header',
+
   propTypes: {
-    appName: React.PropTypes.string,
+    appName: React.PropTypes.string
   },
 
-  render: function() {
+  render() {
     return (
       <div className='header navbar navbar-default'>
         <div className='navbar-header'>

@@ -4,14 +4,21 @@ import Button from './Button';
 export default React.createClass({
   displayName: 'Quit',
 
+  propTypes: {
+    disabled: React.PropTypes.bool,
+    history: React.PropTypes.object,
+    onHandleButtonClick: React.PropTypes.func 
+  },
+
   handleButtonClick(){
     this.props.history.push('/');
   },
 
   render(){
     return (
-      <Button text='Quit' onHandleButtonClick={this.handleButtonClick} disabled={false}/>
-    )
+      <Button text='Quit' onHandleButtonClick={this.handleButtonClick}
+        disabled={false} />
+    );
   }
 
 });

@@ -1,12 +1,15 @@
 import React from 'react';
 
 export default React.createClass({
+  displayName: 'Button',
+
   propTypes: {
     text: React.PropTypes.string,
     onHandleButtonClick: React.PropTypes.func,
     disabled: React.PropTypes.bool
   },
-  render: function() {
+
+  render() {
     return (
       <div className='row button'>
         <div className='col-md-12'>

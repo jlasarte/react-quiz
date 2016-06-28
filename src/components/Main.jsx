@@ -5,7 +5,9 @@ import Header from './Header';
 import * as actionCreators from '../action_creators';
 
 export const Main = React.createClass({
-  render: function() {
+  displayName: 'Main',
+  
+  render(){
     return (
       <div className='main container-fluid'>
         <Header appName='React Quiz' />

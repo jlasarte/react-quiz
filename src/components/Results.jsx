@@ -10,9 +10,12 @@ export const Results = React.createClass({
 
   propTypes: {
     tally: React.PropTypes.number,
-    userName: React.PropTypes.string,
-    history: React.PropTypes.object
+    history: React.PropTypes.object,
+    setEntries: React.PropTypes.func,
+    startGame: React.PropTypes.func,
+    userName: React.PropTypes.string
   },
+
   playAgainButtonClick(){
     const user = this.props.userName;
     this.props.setEntries(entries);
@@ -24,18 +27,18 @@ export const Results = React.createClass({
     this.props.history.push('/');
   },
 
-  render: function() {
+  render() {
     return (
       <div className='main container-fluid'>
         <Header appName='React Quiz' />
         <div className='resultText'>
-          <h1>You finished the game !</h1>
+          <h1>You finished the game !</h1>          
           <h2>Final score:</h2>
           <h3>{this.props.tally}/6</h3>
         </div>
         <div>
           <Button text='Play Again!' onHandleButtonClick={this.playAgainButtonClick} />
-          <Button text='Go to Log In' onHandleButtonClick={this.logInButtonClick}/>
+          <Button text='Go to Log In' onHandleButtonClick={this.logInButtonClick} />
         </div>
       </div>
     );
