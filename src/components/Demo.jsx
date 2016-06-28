@@ -35,7 +35,7 @@ export default React.createClass({
           <div className='javascript'>
           {"<Answer text='answerText' id='answerIndex' play='action' />"}
           </div>            
-          <Answer text="I'm the Answer's text!" />
+          <Answer text="I'm the Answer's text!" select={false}/>
         </div>
         <div id='question-component' className='component-demo'>
           <h3>Question</h3>
