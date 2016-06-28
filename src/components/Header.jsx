@@ -1,5 +1,4 @@
 import React from 'react';
-import Quit from './Quit';
 
 export default React.createClass({
   propTypes: {
