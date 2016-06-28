@@ -15,6 +15,7 @@ export const Game = React.createClass({
   propTypes: {
     answers: React.PropTypes.object,
     correct: React.PropTypes.number,
+    history: React.PropTypes.object,
     play: React.PropTypes.func,
     question: React.PropTypes.string,
     tally: React.PropTypes.number,
@@ -23,7 +24,7 @@ export const Game = React.createClass({
     next: React.PropTypes.func
   },
 
-  componentWillUpdate: function(nextProps){
+  componentWillUpdate(nextProps){
 
     if (!nextProps.answers) {
       this.props.history.push('/results');
@@ -65,7 +66,7 @@ export const Game = React.createClass({
           ) : ''}
         </div>
         {this.props.selected ? <Next next={this.props.next} /> : ''}
-        <Quit history={this.props.history}/>
+        <Quit history={this.props.history} />
       </div>
     );
   }
