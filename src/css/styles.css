@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Pacifico);
+
 html {
   font-family: Arial, serif;
 }
@@ -9,15 +11,28 @@ html {
 .container {
   width: 800px;
 }
+
 .navbar {
   min-height: 70px;
+  background-color: #1a75ff;
+  color: #FFF;
+}
+
+.navbar-header{
+  float:none;
+  text-align: center;
 }
 
 .navbar-brand-name {
   margin: 0 20px 0 0;
+  font-family: Pacifico;
 }
 
-.footer {
+.footer > a{
+  color: #FFF;
+}
+
+.footer{
   margin: 20px 25%;
 }
 
@@ -26,7 +41,7 @@ html {
 }
 
 .game {
-  margin: 20px;
+  margin: 0;
   background: #1a75ff;
   padding: 20px;
 }
@@ -124,4 +139,8 @@ html {
 @-webkit-keyframes colore {
   0%   { color: red; }
   100% { color: blue; }
+}
+
+.resultText{
+  text-align: center;
 }

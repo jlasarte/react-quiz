@@ -6,6 +6,7 @@ export const LogIn = React.createClass({
   displayName: 'LogIn',
 
   propTypes: {
+    history: React.PropTypes.object,
     setEntries: React.PropTypes.func,
     startGame: React.PropTypes.func
   },
