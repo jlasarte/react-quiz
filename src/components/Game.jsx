@@ -65,8 +65,8 @@ export const Game = React.createClass({
             />
           ) : ''}
         </div>
-        {this.props.selected ? <Next next={this.props.next} /> : ''}
         <Quit history={this.props.history} />
+        {this.props.selected ? <Next next={this.props.next} /> : ''}
       </div>
     );
   }
